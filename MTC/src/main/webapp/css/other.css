@@ -1,0 +1,70 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 12, 2016, 11:25:27 AM
+    Author     : ephaadk
+*/
+
+#wrapper {
+    padding-left: 250px;
+    transition: all 0.4s ease 0s;
+}
+
+#sidebar-wrapper {
+    margin-left: -550px;
+    left: 250px;
+    width: 450px;
+    /*background: #CCCCCC;*/
+    /*position: fixed;*/
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: all 0.4s ease 0s;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    margin-top: -270px;
+}
+
+.sidebar-nav {
+    position: absolute;
+    /*top: 0;*/
+    width: 250px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a:active, a:focus, input {
+    outline: 0;
+    outline-style:none;
+    outline-width:0;
+}
+
+ul.nav.nav-pills {
+    text-align: left;
+}
+
+@media (max-width:767px) {
+    #wrapper {
+        padding-left: 0;
+    }
+    #sidebar-wrapper {
+        left: 0;
+    }
+    #wrapper.active {
+        position: relative;
+        left: 250px;
+    }
+    #wrapper.active #sidebar-wrapper {
+        left: 250px;
+        width: 250px;
+        transition: all 0.4s ease 0s;
+    }
+}
+
+
