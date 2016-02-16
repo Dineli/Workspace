@@ -41,27 +41,27 @@ of those sections to manage the look and feel of the site. */
 .studies-section {
     height: 100%;
     padding-top: 150px;
-    text-align: center;
+    text-align: left;
     background: #eee;
 }
 
 .locations-section {
     height: 100%;
     padding-top: 150px;
-    text-align: center;
+    text-align: left;
     background: #fff;
 }
 
 .contact-section {
     height: 100%;
     padding-top: 150px;
-    text-align: center;
+    text-align: left;
     background: #eee;
 }
 
 .contact1-section {
     height: 100%;
     padding-top: 150px;
-    text-align: center;
+    text-align: left;
     background: #fff;
 }
