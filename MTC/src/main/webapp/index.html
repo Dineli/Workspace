@@ -64,7 +64,7 @@
                             <a class="page-scroll study" href="#studies">Studies</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#locations">Locations</a>
+                            <a class="page-scroll loc" href="#locations">Locations</a>
                         </li>
                         <li>
                             <a class="page-scroll" href="#contact">Contact</a>
@@ -92,7 +92,7 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- Studies Section -->
         <section id="studies" class="studies-section">
             <div class="container">
                 <!--                            <div class="row">
@@ -100,20 +100,20 @@
                                                     <h1>About Section</h1>
                                                 </div>
                                             </div>-->
-                <div id="content"></div>
+                <div id="contentStudy"></div>
             </div>
 
         </section>
 
-        <!-- Services Section -->
+        <!-- Location Section -->
         <section id="locations" class="locations-section">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
+                <!--<div class="row">-->
+                    <!--<div class="col-lg-12">-->
                         <!--<h1>Services Section</h1>-->
-                        <div id="content1"></div>
-                    </div>
-                </div>
+                        <div id="contentLoc"></div>
+                    <!--</div>-->
+                <!--</div>-->
             </div>
         </section>
 
@@ -148,7 +148,18 @@
                     url: "studies/base.jsp",
                     data: {},
                     success: function (data) {
-                        $("#content").html(data).show();
+                        $("#contentStudy").html(data).show();
+                    }
+                });
+            });
+            
+            $('a.loc').on('click', function () {
+                $.ajax({
+                    type: "GET",
+                    url: "location/base.jsp",
+                    data: {},
+                    success: function (data) {
+                        $("#contentLoc").html(data).show();
                     }
                 });
             });
