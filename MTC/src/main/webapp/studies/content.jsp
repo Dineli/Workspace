@@ -8,17 +8,27 @@
 <!DOCTYPE html>
 
 
-   <%
-       
+<%
+
     String studyId = request.getParameter("studyId");
-   
-   
-   
-   %>
+    System.out.println("============ studyId================"+studyId);
+    
+
+
+%>
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- FusionMaps CSS -->
+        <script type="text/javascript" src="fusioncharts/fusioncharts.js"></script>
+        <script type="text/javascript" src="fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+        <%if (studyId.equals("001")){%>
+        <script type="text/javascript" src="fusioncharts/countriesJS/singapore.js"></script>
+        <% }else{%>
+        <script type="text/javascript" src="fusioncharts/countriesJS/thailand.js"></script>
+        <%}%>
+    
     </head>
     <body>
         <div class="panel-group">
@@ -32,22 +42,55 @@
 
                     <div class="tab-content">
                         <div id="home" class="tab-pane fade in active">
-                            <h3>HOME</h3>
-                            <p><%= studyId%>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <h3></h3>
+                            <div id="chart-container"></div>
                         </div>
                         <div id="menu1" class="tab-pane fade">
-                            <h3>Menu 1</h3>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <!--<h2>Table</h2>-->
+                            <div class="table-responsive">          
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Firstname</th>
+                                            <th>Lastname</th>
+                                            <th>Age</th>
+                                            <th>City</th>
+                                            <th>Country</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Anna</td>
+                                            <td>Pitt</td>
+                                            <td>35</td>
+                                            <td>New York</td>
+                                            <td>USA</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Anna</td>
+                                            <td>Pitt</td>
+                                            <td>35</td>
+                                            <td>New York</td>
+                                            <td>USA</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
+
     </body>
 </html>
 
 <script type="text/javascript">
+
     $(document).ready(function () {
 
         $(".nav-tabs a").click(function () {
@@ -62,5 +105,9 @@
             }
             e.preventDefault();
         });
+
     });
+
+
+
 </script>

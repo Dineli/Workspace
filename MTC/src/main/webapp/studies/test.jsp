@@ -4,54 +4,38 @@
     Author     : ephaadk
 --%>
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <title>Bootstrap Case</title>
-        <meta charset="utf-8">
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-        <!--  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
-<!--        <script src="js/jquery.easing.min.js"></script>
-        <link href="css/bootstrap.min.css" rel="stylesheet">-->
+        <title>Leaflet Quick Start Guide Example</title>
+        <meta charset="utf-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     </head>
     <body>
+        <div id="map" style="width: 600px; height: 400px"></div>
 
-        <div class="container1">
-            <h2>Dynamic Tabs with jQuery</h2>
-            <p>Click on the Tabs to display the active and previous tab.</p>
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#home">Home</a></li>
-                <li><a href="#menu1">Menu 1</a></li>
-                <li><a href="#menu2">Menu 2</a></li>
-                <li><a href="#menu3">Menu 3</a></li>
-            </ul>
+        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+        <script>
+            window.setTimeout(initMap, 100);
 
-            <div class="tab-content">
-                <div id="home" class="tab-pane fade in active">
-                    <h3>HOME</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div id="menu1" class="tab-pane fade">
-                    <h3>Menu 1</h3>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-            </div>
-
-            <script>
-                $(document).ready(function () {
-                    $(".nav-tabs a").click(function () {
-                        $(this).tab('show');
-                    });
-                    //    $('.nav-tabs a').on('shown.bs.tab', function(event){
-                    //        var x = $(event.target).text();         // active tab
-                    //        var y = $(event.relatedTarget).text();  // previous tab
-                    //        $(".act span").text(x);
-                    //        $(".prev span").text(y);
-                    //    });
-                });
-            </script>
-
+            function initMap() {
+                //this should check if your leaflet is available or wait if not. 
+                if (typeof L === "undefined") {
+                    window.setTimeout(initMap, 100);
+                    return;
+                }
+//        var map = L.map('map');
+                var map = L.map('map').setView([45.8167, 15.9833], 10);
+                var mbUrl = 'https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
+                L.tileLayer(mbUrl, {id: 'examples.map-i875mjb7'}).addTo(map);
+                var marker = L.marker([45.8167, 15.9833]).bindPopup("Zagreb").addTo(map);
+            }
+            ;
+        </script>
     </body>
 </html>
+
