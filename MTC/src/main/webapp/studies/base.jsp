@@ -4,22 +4,41 @@
     Author     : ephaadk
 --%>
 
+<%@page import="com.nus.mtc.service.impl.SampleServiceImpl"%>
+<%@page import="com.nus.mtc.service.ISampleService"%>
+<%@page import="java.util.List"%>
+<%@page import="com.nus.mtc.entity.Samples"%>
+<%@page import="com.nus.mtc.service.impl.StudyServiceImpl"%>
+<%@page import="com.nus.mtc.service.IStudy"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%
+
+    ISampleService iSampleService = new SampleServiceImpl();
+    List<Samples> sampleList = iSampleService.getUniqueSampleDataGroupByCountry();
+
+    System.out.println("==========studyList===============");
+
+%>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Custom CSS -->
         <link href="css/other.css" rel="stylesheet">
+        <!-- GoogleMaps JS -->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&callback=initialize"></script>-->
     </head>
+    <% if (null != sampleList && sampleList.size() > 0) {%>
     <body>
         <div id="wrapper">
             <div id="sidebar-wrapper">
-                <ul class="nav nav-pills nav-stacked"> <!-- db generated-->
-                    <li class="active"><a href="#link1" id="001"><p><b>1001:</b> Developing the P. falciparum Community Project with partners in Singapore</p></a></li>
-                    <li><a href="" id="002"><p><b>1006:</b>  Genome-wide analysis of genetic variation in Thailand</p></a></li>
-                    <li><a href="" id="055"><p><b>1012:</b>   Population genetics of natural populations in Northern Ghana</p></a></li>
-                    <li><a href="" id="018"><p><b>1006:</b>   Genome variation and selection in clinical isolates from rural Malawi</p></a></li>
+                <ul class="nav nav-pills nav-stacked"> 
+                    <%for (Samples sample : sampleList) {%>
+                    <li class="<%=sample.getLocationId().getCountryId().getId()%>"><a class="study_info" href="#" id="<%=sample.getStudyId().getId()%>" ><p><b><%=sample.getStudyId().getId()%>:</b>  <%=sample.getStudyId().getName()%></p></a></li>
+                    <% }%>
                 </ul>
             </div>
             <div id="page-content-wrapper">
@@ -27,6 +46,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-10">
+                                <div id="preloader"></div>
                                 <div id="study-content"></div>
                             </div>
                         </div>
@@ -34,37 +54,63 @@
                 </div>
             </div>
         </div>
+        <% } else {%>
+        <div class="alert alert-danger">
+            <strong> No Data to Display</strong> 
+        </div>
+        <%}%>
     </body>
 </html>
 
 
 <script type="text/javascript">
+
     $(document).ready(function () {
 
         loadFirstStudy();
 
         function loadFirstStudy() {
+    <%
+        if (null != sampleList && sampleList.size() > 0) {
+            int countryId = sampleList.get(0).getLocationId().getCountryId().getId();
+    %>
+            $('li.<%=countryId%>').addClass('active');
             $.ajax({
                 type: "GET",
                 url: "studies/content.jsp",
-                data: {studyId : "001"},
+                data: {country: '<%=countryId%>', studyId: <%= sampleList.get(0).getStudyId().getId()%>},
                 success: function (data) {
                     $("#study-content").html(data).show();
                 }
             });
+    <%}%>
         }
 
-         $('a').on('click', function () {
+        $('a.study_info').on('click', function () {
             var studyId = $(this).attr('id');
             $.ajax({
                 type: "GET",
                 url: "studies/content.jsp",
-                data: {studyId : studyId},
+                data: {studyId: studyId},
                 success: function (data) {
                     $("#study-content").html(data).show();
+                },
+                complete: function () {
+                    hidePagePreload();
+                },
+                beforeSend: function () {
+                    $("#preloader").html('');
+                    showPagePreload();
                 }
             });
         });
 
+        function showPagePreload() {
+            $("#preloader").append("<div class='appender'><p style='text-align:center;'><img src='images/page_preload.gif' /><br/>Loading Data...</p></div>");
+        }
+
+        function hidePagePreload() {
+            $(".appender").html("");
+        }
     });
 </script>
