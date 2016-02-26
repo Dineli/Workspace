@@ -25,13 +25,13 @@ public class SampleDAOImpl implements ISampleDAO {
     }
 
     @Override
-    public List<Samples> fetchUniqueSampleDataGroupByCountry() {
+    public List<Samples> fetchUniqueSampleDataGroupByStudy() {
         Session session = sessionFactory.openSession();
         StringBuilder sb = new StringBuilder();
         sb.append("SELECT s1");
         sb.append(" FROM Studys s, Samples s1");
         sb.append(" WHERE s.id = s1.studyId ");
-        sb.append(" GROUP BY s1.locationId.countryId  ");
+        sb.append(" GROUP BY s.id  ");
         List<Samples> sampleList = session.createQuery(sb.toString()).list();
         session.close();
         System.out.println("---------------------- Found " + sampleList.size() + " Studys");
@@ -41,12 +41,12 @@ public class SampleDAOImpl implements ISampleDAO {
     }
 
     @Override
-    public List<Samples> fetchSampleDataByStudyId(int studyId) {
+    public List<Samples> fetchSampleDataByStudyId(String studyId) {
         Session session = sessionFactory.openSession();
         StringBuilder sb = new StringBuilder();
         sb.append("SELECT s1");
         sb.append(" FROM Studys s,Samples s1");
-        sb.append(" WHERE s.id = s1.studyId AND s1.studyId.id=?");
+        sb.append(" WHERE s.id = s1.studyId AND s.id=?");
         List<Samples> sampleList = session.createQuery(sb.toString()).setParameter(0, studyId).list();
         session.close();
         System.out.println("----------xxxx------------ Found " + sampleList.size() + " Samples");

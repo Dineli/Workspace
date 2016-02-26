@@ -20,12 +20,12 @@ public class SampleServiceImpl implements ISampleService {
     private ISampleDAO iSampleDAO = new SampleDAOImpl();
 
     @Override
-    public List<Samples> getUniqueSampleDataGroupByCountry() {
-        return iSampleDAO.fetchUniqueSampleDataGroupByCountry();
+    public List<Samples> getUniqueSampleDataGroupByStudy() {
+        return iSampleDAO.fetchUniqueSampleDataGroupByStudy();
     }
 
     @Override
-    public List<Samples> getSampleDataByStudyId(int studyId) {
+    public List<Samples> getSampleDataByStudyId(String studyId) {
         return iSampleDAO.fetchSampleDataByStudyId(studyId);
     }
 

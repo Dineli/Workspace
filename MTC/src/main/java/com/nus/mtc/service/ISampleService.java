@@ -13,6 +13,6 @@ import java.util.List;
  * @author EPHAADK
  */
 public interface ISampleService {
-    public List<Samples> getUniqueSampleDataGroupByCountry();
-    public List<Samples> getSampleDataByStudyId(int studyId);
+    public List<Samples> getUniqueSampleDataGroupByStudy();
+    public List<Samples> getSampleDataByStudyId(String studyId);
 }
