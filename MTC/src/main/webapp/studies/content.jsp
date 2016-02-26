@@ -15,7 +15,7 @@
 
     ISampleService iSampleService = new SampleServiceImpl();
 
-    int studyId = Integer.parseInt(request.getParameter("studyId"));
+    String studyId = request.getParameter("studyId");
     List<Samples> sampleData = iSampleService.getSampleDataByStudyId(studyId);
 
     System.out.println("============ sampleData================" + sampleData.size());
@@ -32,7 +32,7 @@
             var locationPointers = new Array();
             locationPointers = [
             <%for (Samples mapData : sampleData) {%>
-                [<%= mapData.getLocationId().getLatitude()%>, <%=mapData.getLocationId().getLongitude()%>, '<%=mapData.getLocationId().getCity()%>']
+                [<%= mapData.getLocationId().getLatitude()%>, <%=mapData.getLocationId().getLongitude()%>, '<%=mapData.getLocationId().getCity()%>', '<%=mapData.getLocationId().getCountryId().getName()%>']
             <%if (sampleData.size() > 0) {%>
                 ,
             <% } %>
@@ -42,7 +42,8 @@
             function initialize() {
                 var myOptions = {
                     center: new google.maps.LatLng(33.890542, 151.274856),
-                    zoom: 10,
+                    zoom: 2,
+                    minZoom: 1,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
                 var map = new google.maps.Map(document.getElementById("googleMap"), myOptions);
@@ -51,13 +52,19 @@
 
             function setMarkers(map, locations) {
                 var marker, i;
+                var content;
                 for (i = 0; i < locations.length; i++)
                 {
                     var lat = locations[i][0]
                     var long = locations[i][1]
                     var city = locations[i][2]
+                    var country = locations[i][3]
 
-                    latlngset = new google.maps.LatLng(lat, long);
+                    //for mtc_test_1
+                    latlngset = new google.maps.LatLng(long, lat);
+                    
+                    //for mtc_db
+//                    latlngset = new google.maps.LatLng(lat,long);
 
                     var marker = new google.maps.Marker({
                         map: map, position: latlngset
@@ -65,9 +72,11 @@
                     });
                     map.setCenter(marker.getPosition())
 
-                    var infowindow = new google.maps.InfoWindow({
-                        content: city
-                    });
+                    content = country;
+
+                        var infowindow = new google.maps.InfoWindow({
+                            content: ("" == city)? (content) : (content + " , " + city)
+                        });
 
                     infowindow.open(map, marker);
                     google.maps.event.addDomListener(window, 'idle');
@@ -97,7 +106,7 @@
                     <div class="tab-content">
                         <div id="home" class="tab-pane fade in active">
                             <h3></h3>
-                            <div id="googleMap" style=" width:910px;height:380px;"></div>
+                            <div id="googleMap" style="width:100%;height:380px;"></div>
                         </div>
                         <div id="menu1" class="tab-pane fade">
                             <!--<h2>Table</h2>-->
@@ -108,7 +117,7 @@
                                             <th>Sample ID</th>
                                             <th>Country</th>
                                             <th>Sampling Site</th>
-                                            <th>Collection Date</th>
+                                            <th>Accession</th>
                                         </tr>
                                     </thead>
                                     <tbody>

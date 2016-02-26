@@ -16,7 +16,7 @@
 <%
 
     ISampleService iSampleService = new SampleServiceImpl();
-    List<Samples> sampleList = iSampleService.getUniqueSampleDataGroupByCountry();
+    List<Samples> sampleList = iSampleService.getUniqueSampleDataGroupByStudy();
 
     System.out.println("==========studyList===============");
 
@@ -41,11 +41,11 @@
                     <% }%>
                 </ul>
             </div>
-            <div id="page-content-wrapper">
+            <div id="page-content-wrapper-study">
                 <div class="page-content">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-10">
+                            <div class="col-md-12">
                                 <div id="preloader"></div>
                                 <div id="study-content"></div>
                             </div>
@@ -78,7 +78,7 @@
             $.ajax({
                 type: "GET",
                 url: "studies/content.jsp",
-                data: {country: '<%=countryId%>', studyId: <%= sampleList.get(0).getStudyId().getId()%>},
+                data: {studyId: '<%= sampleList.get(0).getStudyId().getId()%>'},
                 success: function (data) {
                     $("#study-content").html(data).show();
                 }
