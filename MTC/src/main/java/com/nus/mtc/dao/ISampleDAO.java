@@ -13,6 +13,6 @@ import java.util.List;
  * @author EPHAADK
  */
 public interface ISampleDAO {
-    public List<Samples> fetchUniqueSampleDataGroupByCountry();
-    public List<Samples> fetchSampleDataByStudyId(int studyId);
+    public List<Samples> fetchUniqueSampleDataGroupByStudy();
+    public List<Samples> fetchSampleDataByStudyId(String studyId);
 }
