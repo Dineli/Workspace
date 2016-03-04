@@ -1,7 +1,7 @@
 <%-- 
     Document   : base
     Created on : Feb 12, 2016, 11:08:21 AM
-    Author     : ephaadk
+    Author     : Dineli
 --%>
 
 <%@page import="com.nus.mtc.service.impl.SampleServiceImpl"%>
@@ -14,19 +14,14 @@
 <!DOCTYPE html>
 
 <%
-
     ISampleService iSampleService = new SampleServiceImpl();
+    
     List<Samples> sampleList = iSampleService.getUniqueSampleDataGroupByStudy();
-
-    System.out.println("==========studyList===============");
-
 %>
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!-- Custom CSS -->
-        <link href="css/other.css" rel="stylesheet">
         <!-- GoogleMaps JS -->
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&callback=initialize"></script>-->
@@ -35,9 +30,9 @@
     <body>
         <div id="wrapper">
             <div id="sidebar-wrapper">
-                <ul class="nav nav-pills nav-stacked"> 
+                <ul class="nav nav-pills nav-stacked studyMenu"> 
                     <%for (Samples sample : sampleList) {%>
-                    <li class="<%=sample.getLocationId().getCountryId().getId()%>"><a class="study_info" href="#" id="<%=sample.getStudyId().getId()%>" ><p><b><%=sample.getStudyId().getId()%>:</b>  <%=sample.getStudyId().getName()%></p></a></li>
+                    <li class="<%=sample.getLocationId().getCountryId().getId()%>"><a class="study_info" href="#" id="<%=sample.getStudyId().getId()%>"><p><b><%=sample.getStudyId().getId()%>:</b>  <%=sample.getStudyId().getName()%></p></a></li>
                     <% }%>
                 </ul>
             </div>
@@ -56,7 +51,7 @@
         </div>
         <% } else {%>
         <div class="alert alert-danger">
-            <strong> No Data to Display</strong> 
+            <strong> No Study Data to Display</strong> 
         </div>
         <%}%>
     </body>
@@ -106,7 +101,7 @@
         });
 
         function showPagePreload() {
-            $("#preloader").append("<div class='appender'><p style='text-align:center;'><img src='images/page_preload.gif' /><br/>Loading Data...</p></div>");
+            $("#preloader").append("<div class='appender'><p style='text-align:center;'><img src='images/pgLoader.gif' /><br/>Loading Data...</p></div>");
         }
 
         function hidePagePreload() {
