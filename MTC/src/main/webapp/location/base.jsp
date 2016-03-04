@@ -1,7 +1,7 @@
 <%-- 
     Document   : base
     Created on : Feb 15, 2016, 2:12:29 PM
-    Author     : EPHAADK
+    Author     : Dineli
 --%>
 
 <%@page import="java.util.List"%>
@@ -15,7 +15,6 @@
 
     ILocationService iLocationService = new LocationServiceImpl();
     List<Locations> locationList = iLocationService.getAllLocationData();
-
 
 %>
 
@@ -31,10 +30,10 @@
     <body>
         <div id="wrapper">
             <div id="sidebar-wrapper">
-                <ul class="nav nav-pills nav-stacked"> 
+                <ul class="nav nav-pills nav-stacked studyMenu"> 
                     <%for (Locations location : locationList) {%>
                     <li class="<%= location.getId()%>">
-                        <a href="#" id="<%= location.getId()%>"><%= location.getCity()%> <b><%= location.getCountryId().getName()%></b></a>
+                        <a href="#" class="loc_info" id="<%= location.getId()%>"><%= location.getCity()%> <b><%= location.getCountryId().getName()%></b></a>
                     </li>
                     <%}%>
                 </ul>
@@ -75,10 +74,10 @@
                     $("#loc-content").html(data).show();
                 }
             });
-        }
     <%}%>
+        }
 
-        $('a').on('click', function () {
+        $('a.loc_info').on('click', function () {
             var locId = $(this).attr('id');
             $.ajax({
                 type: "GET",
