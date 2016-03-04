@@ -1,9 +1,15 @@
 <%-- 
     Document   : content
     Created on : Feb 15, 2016, 2:23:04 PM
-    Author     : EPHAADK
+    Author     : Dineli
 --%>
 
+<%@page import="com.nus.mtc.entity.Studys"%>
+<%@page import="com.nus.mtc.entity.Accessions"%>
+<%@page import="com.nus.mtc.entity.Samples"%>
+<%@page import="java.util.List"%>
+<%@page import="com.nus.mtc.service.impl.SampleServiceImpl"%>
+<%@page import="com.nus.mtc.service.ISampleService"%>
 <%@page import="com.nus.mtc.service.impl.LocationServiceImpl"%>
 <%@page import="com.nus.mtc.entity.Locations"%>
 <%@page import="com.nus.mtc.service.ILocationService"%>
@@ -11,12 +17,18 @@
 <!DOCTYPE html>
 <%
     System.out.println("-------------------locId--------------" + request.getParameter("locId"));
-    int locId = Integer.parseInt(request.getParameter("locId"));
     ILocationService iLocationService = new LocationServiceImpl();
+    ISampleService iSampleService = new SampleServiceImpl();
+
+    int locId = Integer.parseInt(request.getParameter("locId"));
+
     Locations locationData = iLocationService.getLocationDataById(locId);
 
-     System.out.println("-------------------lat--------------" + locationData.getLatitude());
-     System.out.println("-------------------long--------------" + locationData.getLongitude());
+    List<Object[]> sampleData4location = iSampleService.getSampleDataByLocationId(locId);
+
+    String city = (!locationData.getCity().isEmpty()) ? (" || ").concat(locationData.getCity()) : "";
+
+
 %>
 
 <html>
@@ -25,6 +37,7 @@
         <script>
             //for mtc_test_1
             var myCenter = new google.maps.LatLng(<%=locationData.getLongitude()%>,<%= locationData.getLatitude()%>);
+            var map;
             //for mtc_db
 //            var myCenter = new google.maps.LatLng(<#%= locationData.getLatitude()%>,<#%=locationData.getLongitude()%>);
 
@@ -34,7 +47,7 @@
                     zoom: 5,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
-                var map = new google.maps.Map(document.getElementById("mapLocation"), mapProp);
+                map = new google.maps.Map(document.getElementById("mapLocation"), mapProp);
                 var marker = new google.maps.Marker({
                     position: myCenter,
                 });
@@ -47,11 +60,10 @@
     <body>
         <div class="panel-group">
             <div class="panel panel-info">
-                <!--<div class="panel-heading">HEADER </div>-->
+                <div class="panel-heading"><%= locationData.getCountryId().getName()%>  <%= city%> </div>
                 <div class="panel-body">
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-target="#location" data-toggle="tab">Location</a></li>
-                        <li><a data-target="#overview" data-toggle="tab">Overview</a></li>
                         <li><a data-target="#contriSamples" data-toggle="tab">Contributed Samples</a></li>
                     </ul>
 
@@ -61,50 +73,58 @@
                             <h3></h3>
                             <div id="mapLocation" style="width:100%;height:380px;"></div>
                         </div>
-                        <div class="tab-pane" id="overview">
-                            <!--<h2>Table</h2>-->
+
+                        <div class="tab-pane" id="contriSamples">
+                            <%if (null != sampleData4location && sampleData4location.size() > 0) {%>
                             <div class="table-responsive">          
-                                <table class="table table-striped">
+                                <table class="table table-striped table-custom-main">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Firstname</th>
-                                            <th>Lastname</th>
-                                            <th>Age</th>
-                                            <th>City</th>
+                                            <th>Sample ID</th>
+                                            <th>Study</th>
                                             <th>Country</th>
+                                            <th>Accession</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <% for (Object entity[] : sampleData4location) {
+                                                Studys study = (Studys) entity[0];
+                                                Samples sample = (Samples) entity[1];
+                                                Accessions accession = (Accessions) entity[2];
+                                        %>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Anna</td>
-                                            <td>Pitt</td>
-                                            <td>35</td>
-                                            <td>New York</td>
-                                            <td>USA</td>
+                                            <td><%= sample.getId()%></td>
+                                            <td><%= study.getId()%></td>
+                                            <td><%= sample.getLocationId().getCountryId().getName()%></td>
+                                            <td class="accessionInfo"><a href="#" id="<%= accession.getSampleId().getId()%>" ><%= accession.getId()%></a></td>
                                         </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Anna</td>
-                                            <td>Pitt</td>
-                                            <td>35</td>
-                                            <td>New York</td>
-                                            <td>USA</td>
-                                        </tr>
+                                        <%}%>
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-                        <div class="tab-pane" id="contriSamples">
-                            <!--<h3><#%= // locId%></h3>-->
+                            <div class="modal fade" id="myModal1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="accession-content-loc"></div>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+                            <% } else {%>
+                            <div class="alert alert-danger" style="margin-top: 10px">
+                                <strong> No Sample Data to Display</strong> 
+                            </div>
+                            <%}%> 
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
     </body>
 </html>
 
@@ -127,6 +147,23 @@
             }
             e.preventDefault();
         });
+
+        $(".accessionInfo a").click(function () {
+            var sampleId = $(this).attr('id');
+            $("h4.modal-title").html('Run Data for Sample : ' + sampleId);
+            $('#myModal1').modal('show');
+            $.ajax({
+                type: "GET",
+                url: "studies/accessionData.jsp",
+                data: {sampleId: sampleId},
+                success: function (data) {
+                    $("#accession-content-loc").html(data).show();
+                }
+            });
+            //href - stays on the same page 
+            return false;
+        });
+
     });
 
 

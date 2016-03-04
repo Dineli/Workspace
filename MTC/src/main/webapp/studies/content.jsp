@@ -1,9 +1,12 @@
 <%-- 
     Document   : content
     Created on : Feb 12, 2016, 4:30:04 PM
-    Author     : ephaadk
+    Author     : Dineli
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.nus.mtc.entity.Accessions"%>
+<%@page import="com.nus.mtc.entity.Studys"%>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="com.nus.mtc.service.impl.SampleServiceImpl"%>
 <%@page import="com.nus.mtc.service.ISampleService"%>
@@ -12,16 +15,18 @@
 <%@page import="com.nus.mtc.entity.Samples"%>
 <!DOCTYPE html>
 <%
-
+    Studys study = new Studys();
     ISampleService iSampleService = new SampleServiceImpl();
 
     String studyId = request.getParameter("studyId");
-    List<Samples> sampleData = iSampleService.getSampleDataByStudyId(studyId);
+    
+    List<Object[]> sampleData = iSampleService.getSampleDataByStudyId(studyId);
 
-    System.out.println("============ sampleData================" + sampleData.size());
-
-
-
+    if (null != sampleData && sampleData.size() > 0) {
+        for (Object entity[] : sampleData) {
+            study = (Studys) entity[0];
+        }
+    }
 %>
 
 <html>
@@ -31,14 +36,18 @@
         <script>
             var locationPointers = new Array();
             locationPointers = [
-            <%for (Samples mapData : sampleData) {%>
+            <%  if (null != sampleData && sampleData.size() > 0) {
+                    for (Object entity[] : sampleData) {
+                        Samples mapData = (Samples) entity[1];
+            %>
                 [<%= mapData.getLocationId().getLatitude()%>, <%=mapData.getLocationId().getLongitude()%>, '<%=mapData.getLocationId().getCity()%>', '<%=mapData.getLocationId().getCountryId().getName()%>']
             <%if (sampleData.size() > 0) {%>
                 ,
-            <% } %>
-            <% } %>
+            <% }
+                    }
+                }
+            %>
             ];
-
             function initialize() {
                 var myOptions = {
                     center: new google.maps.LatLng(33.890542, 151.274856),
@@ -62,7 +71,7 @@
 
                     //for mtc_test_1
                     latlngset = new google.maps.LatLng(long, lat);
-                    
+
                     //for mtc_db
 //                    latlngset = new google.maps.LatLng(lat,long);
 
@@ -74,19 +83,12 @@
 
                     content = country;
 
-                        var infowindow = new google.maps.InfoWindow({
-                            content: ("" == city)? (content) : (content + " , " + city)
-                        });
+                    var infowindow = new google.maps.InfoWindow({
+                        content: ("" == city) ? (content) : (content + " , " + city)
+                    });
 
                     infowindow.open(map, marker);
                     google.maps.event.addDomListener(window, 'idle');
-
-//                    google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
-//                        return function () {
-//                            infowindow.setContent(content);
-//                            infowindow.open(map, marker);
-//                        };
-//                    })(marker, content, infowindow));
                 }
             }
         </script>
@@ -95,8 +97,9 @@
     <body>
         <div class="panel-group">
             <div class="panel panel-info">
-                <!--<div class="panel-heading">HEADER </div>-->
+                <div class="panel-heading"><%= study.getId()%> || <%= study.getName()%></div>
                 <div class="panel-body">
+                    <%if (null != sampleData && sampleData.size() > 0) {%>
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#home">Details</a></li>
                         <li><a href="#menu1">Samples</a></li>
@@ -105,13 +108,12 @@
 
                     <div class="tab-content">
                         <div id="home" class="tab-pane fade in active">
-                            <h3></h3>
                             <div id="googleMap" style="width:100%;height:380px;"></div>
                         </div>
                         <div id="menu1" class="tab-pane fade">
-                            <!--<h2>Table</h2>-->
+
                             <div class="table-responsive">          
-                                <table class="table table-striped">
+                                <table class="table table-striped table-custom-main">
                                     <thead>
                                         <tr>
                                             <th>Sample ID</th>
@@ -121,36 +123,54 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <%for (Samples sample : sampleData) {%>
+                                        <%for (Object entity[] : sampleData) {
+                                                Samples sample = (Samples) entity[1];
+                                                Accessions accession = (Accessions) entity[2];
+                                        %>
                                         <tr>
-                                            <td><%= sample.getId()%></td>
-                                            <td><%= sample.getLocationId().getCountryId().getName()%></td>
-                                            <td><%= sample.getLocationId().getCity()%></td>
-                                            <td>01/01/2016</td>
+                                            <td class="col-md-1"><%= sample.getId()%></td>
+                                            <td class="col-md-1"><%= sample.getLocationId().getCountryId().getName()%></td>
+                                            <td class="col-md-2"><%if (true == sample.getLocationId().getCity().isEmpty()) {%> - <%} else {%><%= sample.getLocationId().getCity()%><%}%></td>
+                                            <td class="col-md-3 accData"><a href="#" id="<%= accession.getSampleId().getId()%>"><%= accession.getId()%></a></td>
                                         </tr>
                                         <%}%>
+
                                     </tbody>
                                 </table>
                             </div>
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="accession-content"></div>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
                         </div>
                         <div id="menu2" class="tab-pane fade">
                             <h3></h3>
                             <div class="well well-lg">
-
                                 <%if (sampleData != null && sampleData.size() > 0) {%>
-                                <p><i class="fa fa-user"></i>&nbsp;&nbsp;<%= sampleData.get(0).getStudyId().getContactName()%> </p>
-                                <p><i class="fa fa-info-circle"></i>&nbsp;&nbsp;<%= sampleData.get(0).getStudyId().getContactDetails()%> </p>
-                                <p><i class="fa fa-envelope"></i>&nbsp;&nbsp;<%= sampleData.get(0).getStudyId().getContactEmail()%> </p>
+                                <p><i class="fa fa-user"></i>&nbsp;&nbsp;<%= study.getContactName()%> </p>
+                                <p><i class="fa fa-info-circle"></i>&nbsp;&nbsp;<%= study.getContactDetails()%> </p>
+                                <p><i class="fa fa-envelope"></i>&nbsp;&nbsp;<%= study.getContactEmail()%> </p>
                                 <%}%>
-
                             </div>
                         </div>
                     </div>
-
+                    <% } else {%>
+                    <div class="alert alert-danger" style="margin-top: 10px">
+                        <strong> No Sample Data to Display</strong> 
+                    </div>
+                    <%}%> 
                 </div>
             </div>
         </div>
-
     </body>
 </html>
 
@@ -172,6 +192,22 @@
                 $parent.addClass('active');
             }
             e.preventDefault();
+        });
+
+        $(".accData a").click(function () {
+            var sampleId = $(this).attr('id');
+            $("h4.modal-title").html('Run Data for Sample : ' + sampleId);
+            $('#myModal').modal('show');
+            $.ajax({
+                type: "GET",
+                url: "studies/accessionData.jsp",
+                data: {sampleId: sampleId},
+                success: function (data) {
+                    $("#accession-content").html(data).show();
+                }
+            });
+            //href - stays on the same page 
+            return false;
         });
 
     });
