@@ -5,14 +5,21 @@
  */
 package com.nus.mtc.service;
 
+import com.nus.mtc.entity.Accessions;
 import com.nus.mtc.entity.Samples;
 import java.util.List;
 
 /**
  *
- * @author EPHAADK
+ * @author Dineli
  */
 public interface ISampleService {
+
     public List<Samples> getUniqueSampleDataGroupByStudy();
-    public List<Samples> getSampleDataByStudyId(String studyId);
+
+    public List<Object[]> getSampleDataByStudyId(String studyId);
+    
+    public List<Object[]> getSampleDataByLocationId(int locationId);
+    
+    public List<Accessions> getAccessionDataBySampleId(String sampleId);
 }

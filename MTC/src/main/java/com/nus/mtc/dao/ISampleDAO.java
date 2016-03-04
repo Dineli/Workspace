@@ -5,14 +5,21 @@
  */
 package com.nus.mtc.dao;
 
+import com.nus.mtc.entity.Accessions;
 import com.nus.mtc.entity.Samples;
 import java.util.List;
 
 /**
  *
- * @author EPHAADK
+ * @author Dineli
  */
 public interface ISampleDAO {
+
     public List<Samples> fetchUniqueSampleDataGroupByStudy();
-    public List<Samples> fetchSampleDataByStudyId(String studyId);
+
+    public List<Object[]> fetchSampleDataByStudyId(String studyId);
+
+    public List<Object[]> fetchSampleDataByLocationId(int locationId);
+
+    public List<Accessions> fetchAccessionDataBySampleId(String sampleId);
 }

@@ -7,13 +7,14 @@ package com.nus.mtc.service.impl;
 
 import com.nus.mtc.dao.ISampleDAO;
 import com.nus.mtc.dao.impl.SampleDAOImpl;
+import com.nus.mtc.entity.Accessions;
 import com.nus.mtc.entity.Samples;
 import com.nus.mtc.service.ISampleService;
 import java.util.List;
 
 /**
  *
- * @author EPHAADK
+ * @author Dineli
  */
 public class SampleServiceImpl implements ISampleService {
 
@@ -25,8 +26,18 @@ public class SampleServiceImpl implements ISampleService {
     }
 
     @Override
-    public List<Samples> getSampleDataByStudyId(String studyId) {
+    public List<Object[]> getSampleDataByStudyId(String studyId) {
         return iSampleDAO.fetchSampleDataByStudyId(studyId);
+    }
+
+    @Override
+    public List<Accessions> getAccessionDataBySampleId(String sampleId) {
+        return iSampleDAO.fetchAccessionDataBySampleId(sampleId);
+    }
+
+    @Override
+    public List<Object[]> getSampleDataByLocationId(int locationId) {
+      return iSampleDAO.fetchSampleDataByLocationId(locationId);
     }
 
 }
