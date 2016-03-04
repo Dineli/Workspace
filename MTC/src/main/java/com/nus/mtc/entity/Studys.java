@@ -135,5 +135,5 @@ public class Studys implements Serializable {
     public String toString() {
         return "com.nus.mtc.entity.Studys[ id=" + id + " ]";
     }
-    
+
 }
