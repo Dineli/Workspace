@@ -16,7 +16,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-    System.out.println("-------------------locId--------------" + request.getParameter("locId"));
     ILocationService iLocationService = new LocationServiceImpl();
     ISampleService iSampleService = new SampleServiceImpl();
 
@@ -35,11 +34,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script>
-            //for mtc_test_1
             var myCenter = new google.maps.LatLng(<%=locationData.getLongitude()%>,<%= locationData.getLatitude()%>);
             var map;
-            //for mtc_db
-//            var myCenter = new google.maps.LatLng(<#%= locationData.getLatitude()%>,<#%=locationData.getLongitude()%>);
 
             function initialize() {
                 var mapProp = {

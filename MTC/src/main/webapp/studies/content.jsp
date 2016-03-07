@@ -19,7 +19,7 @@
     ISampleService iSampleService = new SampleServiceImpl();
 
     String studyId = request.getParameter("studyId");
-    
+
     List<Object[]> sampleData = iSampleService.getSampleDataByStudyId(studyId);
 
     if (null != sampleData && sampleData.size() > 0) {
@@ -69,11 +69,7 @@
                     var city = locations[i][2]
                     var country = locations[i][3]
 
-                    //for mtc_test_1
                     latlngset = new google.maps.LatLng(long, lat);
-
-                    //for mtc_db
-//                    latlngset = new google.maps.LatLng(lat,long);
 
                     var marker = new google.maps.Marker({
                         map: map, position: latlngset
