@@ -32,8 +32,9 @@
             <div id="sidebar-wrapper">
                 <ul class="nav nav-pills nav-stacked studyMenu"> 
                     <%for (Locations location : locationList) {%>
+                    <% String city = (!location.getCity().isEmpty())? location.getCity().concat(",") : ""; %>
                     <li class="<%= location.getId()%>">
-                        <a href="#" class="loc_info" id="<%= location.getId()%>"><%= location.getCity()%> <b><%= location.getCountryId().getName()%></b></a>
+                        <a href="#" class="loc_info" id="<%= location.getId()%>"><%= city%> <b><%= location.getCountryId().getName()%></b></a>
                     </li>
                     <%}%>
                 </ul>
