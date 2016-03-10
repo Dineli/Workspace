@@ -88,6 +88,7 @@
                     $("#loc-content").html(data).show();
                 }
             });
+            return false;
         });
 
     });

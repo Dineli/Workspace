@@ -18,6 +18,7 @@
 <%
     ILocationService iLocationService = new LocationServiceImpl();
     ISampleService iSampleService = new SampleServiceImpl();
+    boolean showPagination = false;
 
     int locId = Integer.parseInt(request.getParameter("locId"));
 
@@ -73,7 +74,7 @@
                         <div class="tab-pane" id="contriSamples">
                             <%if (null != sampleData4location && sampleData4location.size() > 0) {%>
                             <div class="table-responsive">          
-                                <table class="table table-striped table-custom-main">
+                                <table class="table table-striped table-custom-main tablesorter">
                                     <thead>
                                         <tr>
                                             <th>Sample ID</th>
@@ -83,7 +84,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% for (Object entity[] : sampleData4location) {
+                                        <%
+                                            showPagination = (sampleData4location.size() > 10) ? true : false;
+                                            for (Object entity[] : sampleData4location) {
                                                 Studys study = (Studys) entity[0];
                                                 Samples sample = (Samples) entity[1];
                                                 Accessions accession = (Accessions) entity[2];
@@ -92,7 +95,11 @@
                                             <td><%= sample.getId()%></td>
                                             <td><%= study.getId()%></td>
                                             <td><%= sample.getLocationId().getCountryId().getName()%></td>
+                                            <%if (null != accession) {%>
                                             <td class="accessionInfo"><a href="#" id="<%= accession.getSampleId().getId()%>" ><%= accession.getId()%></a></td>
+                                                <%} else {%>
+                                            <td>-</td>
+                                            <%}%>
                                         </tr>
                                         <%}%>
                                     </tbody>
@@ -130,6 +137,12 @@
     $(document).ready(function () {
 
         initialize();
+
+        $(".table-custom-main").tablesorter();
+
+        if (<%=showPagination%>) {
+            $('.table-custom-main').paging({limit: 10});
+        }
 
         $(".nav-tabs a").click(function () {
             $(this).tab('show');

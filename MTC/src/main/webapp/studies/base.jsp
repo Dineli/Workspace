@@ -15,7 +15,7 @@
 
 <%
     ISampleService iSampleService = new SampleServiceImpl();
-    
+
     List<Samples> sampleList = iSampleService.getUniqueSampleDataGroupByStudy();
 %>
 
@@ -33,7 +33,7 @@
                 <ul class="nav nav-pills nav-stacked studyMenu"> 
                     <%for (Samples sample : sampleList) {%>
                     <li class="<%=sample.getLocationId().getCountryId().getId()%>"><a class="study_info" href="#" id="<%=sample.getStudyId().getId()%>"><p><b><%=sample.getStudyId().getId()%>:</b>  <%=sample.getStudyId().getName()%></p></a></li>
-                    <% }%>
+                                    <% }%>
                 </ul>
             </div>
             <div id="page-content-wrapper-study">

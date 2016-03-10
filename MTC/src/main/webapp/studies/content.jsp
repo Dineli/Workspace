@@ -32,7 +32,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
         <script>
             var locationPointers = new Array();
             locationPointers = [
@@ -98,8 +97,8 @@
                     <%if (null != sampleData && sampleData.size() > 0) {%>
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#home">Details</a></li>
-                        <li><a href="#menu1">Samples</a></li>
-                        <li><a href="#menu2">Key Contact</a></li>
+                        <li><a data-target="#menu1" data-toggle="tab">Samples</a></li>
+                        <li><a data-target="#menu2" data-toggle="tab">Key Contact</a></li>
                     </ul>
 
                     <div class="tab-content">
@@ -109,7 +108,7 @@
                         <div id="menu1" class="tab-pane fade">
 
                             <div class="table-responsive">          
-                                <table class="table table-striped table-custom-main">
+                                <table class="table table-striped table-custom-main tablesorter">
                                     <thead>
                                         <tr>
                                             <th>Sample ID</th>
@@ -127,7 +126,11 @@
                                             <td class="col-md-1"><%= sample.getId()%></td>
                                             <td class="col-md-1"><%= sample.getLocationId().getCountryId().getName()%></td>
                                             <td class="col-md-2"><%if (true == sample.getLocationId().getCity().isEmpty()) {%> - <%} else {%><%= sample.getLocationId().getCity()%><%}%></td>
+                                            <%if (null != accession) {%>
                                             <td class="col-md-3 accData"><a href="#" id="<%= accession.getSampleId().getId()%>"><%= accession.getId()%></a></td>
+                                                <%} else {%>
+                                            <td>-</td>
+                                            <%}%>
                                         </tr>
                                         <%}%>
 
@@ -176,6 +179,10 @@
 
         //initializing google maps
         initialize();
+
+        $(".table-custom-main").tablesorter();
+
+        $('.table-custom-main').paging({limit: 10});
 
         $(".nav-tabs a").click(function () {
             $(this).tab('show');
