@@ -7,16 +7,17 @@ package com.nus.mtc.service.impl;
 
 import com.nus.mtc.dao.ILocationDAO;
 import com.nus.mtc.dao.impl.LocationDAOImpl;
+import com.nus.mtc.entity.Countrys;
 import com.nus.mtc.entity.Locations;
 import com.nus.mtc.service.ILocationService;
 import java.util.List;
 
 /**
  *
- * @author EPHAADK
+ * @author Dineli
  */
-public class LocationServiceImpl implements ILocationService{
-    
+public class LocationServiceImpl implements ILocationService {
+
     private ILocationDAO iLocationDAO = new LocationDAOImpl();
 
     @Override
@@ -26,7 +27,17 @@ public class LocationServiceImpl implements ILocationService{
 
     @Override
     public Locations getLocationDataById(int locationId) {
-       return iLocationDAO.fetchLocationDataById(locationId);
+        return iLocationDAO.fetchLocationDataById(locationId);
     }
-    
+
+    @Override
+    public List<Countrys> getAllCountrys() {
+        return iLocationDAO.fetchAllCountrys();
+    }
+
+    @Override
+    public List<Locations> getLocationDataByCountryId(int countryId) {
+        return iLocationDAO.fetchLocationDataByCountryId(countryId);
+    }
+
 }

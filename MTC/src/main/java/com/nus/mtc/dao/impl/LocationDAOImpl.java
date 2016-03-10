@@ -6,6 +6,7 @@
 package com.nus.mtc.dao.impl;
 
 import com.nus.mtc.dao.ILocationDAO;
+import com.nus.mtc.entity.Countrys;
 import com.nus.mtc.entity.Locations;
 import com.nus.mtc.entity.persistence.HibernateUtil;
 import java.util.List;
@@ -35,7 +36,7 @@ public class LocationDAOImpl implements ILocationDAO {
         StringBuilder sb = new StringBuilder();
         List<Locations> countryList = null;
 
-        sb.append("SELECT l FROM Locations l JOIN l.countryId c");
+        sb.append("SELECT l FROM Locations l JOIN l.countryId c ORDER BY c.name ASC ");
         try {
             countryList = session.createQuery(sb.toString()).list();
             logger.info("Country List size " + countryList.size());
@@ -65,6 +66,40 @@ public class LocationDAOImpl implements ILocationDAO {
             session.close();
         }
         return location;
+    }
+
+    @Override
+    public List<Countrys> fetchAllCountrys() {
+        logger.info("Fetching all countries");
+        Session session = sessionFactory.openSession();
+        List<Countrys> countryList = null;
+        try {
+            countryList = session.getNamedQuery("Countrys.findAll").list();
+            logger.info("All country list size " + countryList.size());
+        } catch (Exception exception) {
+            logger.error("Error occured while retirieving all countries");
+            logger.error(exception.getMessage());
+        } finally {
+            session.close();
+        }
+        return countryList;
+    }
+
+    @Override
+    public List<Locations> fetchLocationDataByCountryId(int countryId) {
+        logger.info("Fetching country data by ID");
+        Session session = sessionFactory.openSession();
+        List<Locations> countryList = null;
+        try {
+            countryList = session.createQuery("SELECT l FROM Locations l JOIN l.countryId c WHERE c.id= :countryId").setInteger("countryId", countryId).list();
+            logger.info("Country list size " + countryList.size());
+        } catch (Exception exception) {
+            logger.error("Error occured while retirieving country data by ID");
+            logger.error(exception.getMessage());
+        } finally {
+            session.close();
+        }
+        return countryList;
     }
 
 }

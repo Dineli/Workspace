@@ -5,17 +5,22 @@
  */
 package com.nus.mtc.dao;
 
+import com.nus.mtc.entity.Countrys;
 import com.nus.mtc.entity.Locations;
 import java.util.List;
 
 /**
  *
- * @author EPHAADK
+ * @author Dineli
  */
 public interface ILocationDAO {
 
     public List<Locations> fetchAllLocationData();
 
     public Locations fetchLocationDataById(int locationId);
+
+    public List<Countrys> fetchAllCountrys();
+
+   public List<Locations> fetchLocationDataByCountryId(int countryId);
 
 }
