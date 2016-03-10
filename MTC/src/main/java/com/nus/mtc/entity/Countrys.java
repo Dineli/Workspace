@@ -21,13 +21,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author EPHAADK
+ * @author Dineli
  */
 @Entity
 @Table(name = "countrys")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Countrys.findAll", query = "SELECT c FROM Countrys c"),
+    @NamedQuery(name = "Countrys.findAll", query = "SELECT c FROM Countrys c ORDER BY c.name ASC "),
     @NamedQuery(name = "Countrys.findById", query = "SELECT c FROM Countrys c WHERE c.id = :id"),
     @NamedQuery(name = "Countrys.findByName", query = "SELECT c FROM Countrys c WHERE c.name = :name")})
 public class Countrys implements Serializable {
@@ -43,8 +43,6 @@ public class Countrys implements Serializable {
     @Size(min = 1, max = 15)
     @Column(name = "name")
     private String name;
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "countryId")
-//    private Collection<Locations> locationsCollection;
 
     public Countrys() {
     }
@@ -74,15 +72,6 @@ public class Countrys implements Serializable {
         this.name = name;
     }
 
-//    @XmlTransient
-//    public Collection<Locations> getLocationsCollection() {
-//        return locationsCollection;
-//    }
-//
-//    public void setLocationsCollection(Collection<Locations> locationsCollection) {
-//        this.locationsCollection = locationsCollection;
-//    }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -107,5 +96,5 @@ public class Countrys implements Serializable {
     public String toString() {
         return "com.nus.mtc.entity.Countrys[ id=" + id + " ]";
     }
-    
+
 }
