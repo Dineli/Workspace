@@ -52,11 +52,18 @@ of those sections to manage the look and feel of the site. */
     background: #fff;
 }
 
-.contact-section {
+.country-section {
     height: 100%;
     padding-top: 150px;
     text-align: left;
     background: #eee;
+}
+
+.contact-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: left;
+    background: #fff;
 }
 
 .contact1-section {
