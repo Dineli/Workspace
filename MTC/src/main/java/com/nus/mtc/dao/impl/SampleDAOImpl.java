@@ -61,8 +61,9 @@ public class SampleDAOImpl implements ISampleDAO {
         List<Object[]> sampleList = null;
 
         sb.append("SELECT {s.*}, {s1.*}, {a.*} FROM studys s, samples s1 LEFT JOIN accessions a ON s1.id=a.sample_id");
-        sb.append(" WHERE s.id=s1.study_id and a.id IS NOT NULL and s.id=?");
+        sb.append(" WHERE s.id=s1.study_id AND s.id=?");
         sb.append(" GROUP BY s1.id");
+        sb.append(" ORDER BY a.id DESC");
         try {
             sampleList = session.createSQLQuery(sb.toString()).addEntity("s", Studys.class).addEntity("s1", Samples.class)
                     .addEntity("a", Accessions.class).setString(0, studyId).list();
@@ -103,8 +104,9 @@ public class SampleDAOImpl implements ISampleDAO {
         List<Object[]> sampleList = null;
         try {
             sb.append("SELECT {s.*}, {s1.*}, {a.*} FROM studys s, samples s1 LEFT JOIN accessions a ON s1.id=a.sample_id");
-            sb.append(" WHERE s.id=s1.study_id and a.id IS NOT NULL and s1.location_id=?");
+            sb.append(" WHERE s.id=s1.study_id AND s1.location_id=?");
             sb.append(" GROUP BY s1.id");
+            sb.append(" ORDER BY a.id DESC");
             sampleList = session.createSQLQuery(sb.toString()).addEntity("s", Studys.class).addEntity("s1", Samples.class)
                     .addEntity("a", Accessions.class).setInteger(0, locationId).list();
             logger.info("Sample list size " + sampleList.size());
