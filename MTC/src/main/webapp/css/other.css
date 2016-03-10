@@ -92,10 +92,14 @@ ul.nav.nav-pills {
     text-align: left;
 }
 
-.table-responsive{
+.table {
+    margin-bottom: 0;
+}
+
+/*.table-responsive{
     overflow:scroll; 
     height:500px;
-}
+}*/
 
 .panel-body ul li{
     font-weight: bold;
@@ -184,6 +188,52 @@ ul.nav.nav-pills {
     height: auto;
 }
 
+/*table sorter*/
+table.tablesorter thead tr .header {
+    background-image: url(../images/bg.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+}
+table.tablesorter thead tr .headerSortUp {
+    background-image: url(../images/asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+    background-image: url(../images/desc.gif);
+}
+/*table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+    background-color: #8dbdd8;
+}*/
+/*EOF table sorter*/
+
+/*pagination*/
+
+.paging-nav {
+    text-align: right;
+    padding-top: 2px;
+}
+
+.paging-nav .selected-page {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #fff 0%, #dcdcdc 100%) repeat scroll 0 0;
+    border: 1px solid #979797;
+    color: #333 !important;
+}
+.paging-nav a {
+    border: 1px solid transparent;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: #333 !important;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 2px;
+    min-width: 1.5em;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+/*EOF pagination*/
+
 @media (max-width:767px) {
     #wrapper {
         padding-left: 0;
@@ -201,5 +251,22 @@ ul.nav.nav-pills {
         transition: all 0.4s ease 0s;
     }
 }
+
+/*@media (min-width:1200px) {
+    #sidebar-wrapper {
+      width: 100%;
+      height:100px;
+      
+  }
+  #page-content-wrapper{
+    width: 100%;
+    height:500px;
+   
+  }
+  
+  .col-md-12{
+     margin-top:100px;
+  }
+}*/
 
 
