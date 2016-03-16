@@ -163,6 +163,7 @@
                                         <%}%>
                                     </tbody>
                                 </table>
+                                <div class="tfootData"></div>  
                             </div>
                             <div class="modal fade" id="myModal2">
                                 <div class="modal-dialog">
