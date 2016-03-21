@@ -23,6 +23,7 @@ Author     : Dineli
         <link href="css/scrolling-nav.css" rel="stylesheet">
         <link href="css/other.css" rel="stylesheet">
         <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="css/mobile.css" />
 
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
@@ -37,7 +38,7 @@ Author     : Dineli
 
         <!-- Table Sorter JS -->
         <script type="text/javascript" src="js/jquery.tablesorter.js"></script> 
-        
+
         <!-- Pagination JS -->
         <script src="js/paging.js"></script>
 
@@ -84,7 +85,7 @@ Author     : Dineli
                             <a class="page-scroll country" href="#countries">Countries</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#contact">Contact</a>
+                            <a class="page-scroll" href="#contact">Contact Us</a>
                         </li>
                         <!--                        <li>
                                                     <a class="page-scroll" href="#contact1"></a>
@@ -135,7 +136,72 @@ Author     : Dineli
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Contact Section</h1>
+                        <table class="contact-data-1">
+                            <tr>
+                                <th>
+                                    <i class="fa fa-home fa-3x"></i>
+                                </th>
+                                <td>
+                                    <strong>Address</strong><br>
+                                    Life Sciences Institute (LSI)<br>
+                                    National University of Singapore<br>
+                                    Centre for Life Sciences,<br> #05-02, 28 Medical Drive,<br>Singapore 117456
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <i class="fa fa-phone fa-3x"></i>
+                                </th>
+                                <td>
+                                    <strong>Phone</strong><br>
+                                    +65 6516 4032
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="contact-data-1">
+                            <tr>
+                                <th>
+                                    <i class="fa fa-fax fa-3x"></i>
+                                </th>
+                                <td>
+                                    <strong>Fax</strong><br>
+                                    +65 6873 3905
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <i class="fa fa-envelope fa-3x"></i>
+                                </th>
+                                <td>
+                                    <strong>Email</strong><br>
+                                    dbsbox2@nus.edu.sg
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <i class="fa fa-clock-o fa-3x"></i>
+                                </th>
+                                <td>
+                                    <strong>Operating Hours</strong><br>
+                                    Monday – Thursday : 8:30am – 6:00pm <br>
+                                    Friday : 8:30am – 5:30pm <br>
+                                    Closed on Saturday, Sunday and Public Holidays
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="contact-icon-display">
+                            <tr>
+                                <td>
+                                    <a data-target="#"><i class="fa fa-facebook fa-3x"></i></a><a data-target="#" target="_blank"><i class="fa fa-twitter fa-3x"></i></a> <a data-target="#" target="_blank"><i class="fa fa-linkedin fa-3x"></i></a><a data-target="#"><i class="fa fa-youtube fa-3x"></i></a><a data-target="#"><i class="fa fa-google-plus fa-3x"></i></a>
+                                </td>
+                            </tr>
+                            <tr class="copyright"><td>&copy; 2016 All Right Reserved | National University of Singapore (NUS)</td></tr>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -176,6 +242,10 @@ Author     : Dineli
                         $("#contentCountry").html(data).show();
                     }
                 });
+            });
+
+            $('.contact-data-1 i').mouseenter(function () {
+                $(this).effect('bounce', {times: 4}, 4500);
             });
 
         </script>
