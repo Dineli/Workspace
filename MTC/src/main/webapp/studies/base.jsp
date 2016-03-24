@@ -29,12 +29,14 @@
     <% if (null != sampleList && sampleList.size() > 0) {%>
     <body>
         <div id="wrapper">
-            <div id="sidebar-wrapper">
-                <ul class="nav nav-pills nav-stacked studyMenu"> 
-                    <%for (Samples sample : sampleList) {%>
-                    <li class="<%=sample.getLocationId().getCountryId().getId()%>"><a class="study_info" href="#" id="<%=sample.getStudyId().getId()%>"><p><b><%=sample.getStudyId().getId()%>:</b>  <%=sample.getStudyId().getName()%></p></a></li>
-                                    <% }%>
-                </ul>
+            <div class="mobile-sidebar">
+                <div id="sidebar-wrapper">
+                    <ul class="nav nav-pills nav-stacked studyMenu"> 
+                        <%for (Samples sample : sampleList) {%>
+                        <li class="<%=sample.getLocationId().getCountryId().getId()%>"><a class="study_info" href="#" id="<%=sample.getStudyId().getId()%>"><p><b><%=sample.getStudyId().getId()%>:</b>  <%=sample.getStudyId().getName()%></p></a></li>
+                                        <% }%>
+                    </ul>
+                </div>
             </div>
             <div id="page-content-wrapper-study">
                 <div class="page-content">

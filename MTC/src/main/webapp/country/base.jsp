@@ -30,14 +30,16 @@
     <% if (null != countryList && countryList.size() > 0) {%>
     <body>
         <div id="wrapper">
-            <div id="sidebar-wrapper">
-                <ul class="nav nav-pills nav-stacked studyMenu"> 
-                    <%for (Countrys country : countryList) {%>
-                    <li class="<%= country.getId()%>">
-                        <a href="#" class="country_info" id="<%= country.getId()%>"><b><%= country.getName()%></b></a>
-                    </li>
-                    <%}%>
-                </ul>
+            <div class="mobile-sidebar">
+                <div id="sidebar-wrapper">
+                    <ul class="nav nav-pills nav-stacked studyMenu"> 
+                        <%for (Countrys country : countryList) {%>
+                        <li class="<%= country.getId()%>">
+                            <a href="#" class="country_info" id="<%= country.getId()%>"><b><%= country.getName()%></b></a>
+                        </li>
+                        <%}%>
+                    </ul>
+                </div>
             </div>
         </div>
         <div id="page-content-wrapper-loc">
