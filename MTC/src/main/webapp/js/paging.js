@@ -15,7 +15,10 @@
                 this.options.rows = rows;
                 this.options.rowDisplayStyle = rows.css('display');
                 var nav = this._getNavBar();
-                this.element.after(nav);
+                //below validation display the paging function only if the no. of records per page surpass the limit
+                if (rows.length > this.options.limit){
+                    this.element.after(nav);
+                }
                 this.element.after(tfooter);
                 this.showPage(0);
             },
@@ -24,12 +27,12 @@
                 var totalPages = Math.ceil(rows.length / this.options.limit);
                 var lastPage = totalPages - 1;
                 var nav = $('<div>', {class: 'paging-nav'});
+                var to = (rows.length < this.options.limit) ? rows.length : this.options.limit;
 
                 for (var i = 0; i < totalPages; i++) {
-
                     //btn 1 active on page load
                     if (i === 0) {
-                        tfooter.innerHTML = 'PAGE 1/'+totalPages+' [1 - 10 of ' + rows.length + ' ENTRIES]';
+                        tfooter.innerHTML = 'PAGE 1/' + totalPages + ' [1 - ' + to + ' OF ' + rows.length + ' ENTRIES]';
                         this._on($('<a href="#" class="selected-page" data-page="0" value="1" totalPages="' + totalPages + '">1</a>', {
                         }).appendTo(nav),
                                 {click: "pageClickHandler"});
@@ -106,13 +109,13 @@
                 var to = from + this.options.limit - 1;
                 var pageNum = $(event.target).attr('data-page');
                 var totalNoOfPages = $(event.target).attr('totalPages');
-               
+
                 $(event.target).siblings().attr('class', "");
                 $(event.target).attr('class', "selected-page");
                 if (to > totalRecords.length) {
                     to = totalRecords.length;
                 }
-                tfooter.innerHTML = 'PAGE '+ currentPage + '/'+ totalNoOfPages +' ['+from + ' - ' + to + ' OF ' + totalRecords.length + ' ENTRIES]';
+                tfooter.innerHTML = 'PAGE ' + currentPage + '/' + totalNoOfPages + ' [' + from + ' - ' + to + ' OF ' + totalRecords.length + ' ENTRIES]';
                 this.showPage(pageNum);
             },
             pageStepHandler: function (event) {
