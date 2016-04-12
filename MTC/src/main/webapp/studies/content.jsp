@@ -108,7 +108,7 @@
                         <div id="menu1" class="tab-pane fade">
 
                             <div class="table-responsive">          
-                                <table class="table table-striped table-custom-main tablesorter">
+                                <table class="table table-custom-main tablesorter">
                                     <thead>
                                         <tr>
                                             <th>Sample ID</th>
