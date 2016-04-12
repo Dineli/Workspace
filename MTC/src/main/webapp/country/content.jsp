@@ -24,7 +24,6 @@
     String countryName = "";
     int locationId[];
     int i = 0;
-    boolean showPagination = false;
 
     int countryId = Integer.parseInt(request.getParameter("countryId"));
 
@@ -130,11 +129,10 @@
                                     sampleDataByCountry.clear();
                                     sampleDataByCountry.addAll(countryWithManyLocs);
                                 }
-                                showPagination = (sampleDataByCountry.size() > 10) ? true : false;
                             %>
                             <%if (null != sampleDataByCountry && sampleDataByCountry.size() > 0) {%>
                             <div class="table-responsive">          
-                                <table class="table table-striped table-custom-main tablesorter">
+                                <table class="table table-custom-main tablesorter">
                                     <thead>
                                         <tr>
                                             <th>Sample ID</th>
@@ -200,9 +198,7 @@
 
         $(".table-custom-main").tablesorter();
 
-        if (<%=showPagination%>) {
-            $('.table-custom-main').paging({limit: 10});
-        }
+        $('.table-custom-main').paging({limit: 10});
 
         $(".nav-tabs a").click(function () {
             $(this).tab('show');

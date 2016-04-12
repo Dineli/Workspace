@@ -18,7 +18,6 @@
 <%
     ILocationService iLocationService = new LocationServiceImpl();
     ISampleService iSampleService = new SampleServiceImpl();
-    boolean showPagination = false;
 
     int locId = Integer.parseInt(request.getParameter("locId"));
 
@@ -74,7 +73,7 @@
                         <div class="tab-pane" id="contriSamples">
                             <%if (null != sampleData4location && sampleData4location.size() > 0) {%>
                             <div class="table-responsive">          
-                                <table class="table table-striped table-custom-main tablesorter">
+                                <table class="table table-custom-main tablesorter">
                                     <thead>
                                         <tr>
                                             <th>Sample ID</th>
@@ -85,7 +84,6 @@
                                     </thead>
                                     <tbody>
                                         <%
-                                            showPagination = (sampleData4location.size() > 10) ? true : false;
                                             for (Object entity[] : sampleData4location) {
                                                 Studys study = (Studys) entity[0];
                                                 Samples sample = (Samples) entity[1];
@@ -141,9 +139,7 @@
 
         $(".table-custom-main").tablesorter();
 
-        if (<%=showPagination%>) {
-            $('.table-custom-main').paging({limit: 10});
-        }
+        $('.table-custom-main').paging({limit: 10});
 
         $(".nav-tabs a").click(function () {
             $(this).tab('show');
