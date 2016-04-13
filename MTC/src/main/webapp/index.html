@@ -42,6 +42,9 @@ Author     : Dineli
         <!-- Pagination JS -->
         <script src="js/paging.js"></script>
 
+        <!-- Auto complete JS -->
+        <script src="js/autocomplete.js"></script>
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -83,6 +86,9 @@ Author     : Dineli
                         </li>
                         <li>
                             <a class="page-scroll country" href="#countries">Countries</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll search" href="#search">Search</a> 
                         </li>
                         <li>
                             <a class="page-scroll" href="#contact">Contact Us</a>
@@ -128,6 +134,13 @@ Author     : Dineli
         <section id="countries" class="country-section">
             <div class="container">
                 <div id="contentCountry"></div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section id="search" class="search-section">
+            <div class="container">
+                <div id="contentSearch"></div>
             </div>
         </section>
 
@@ -246,6 +259,17 @@ Author     : Dineli
 
             $('.contact-data-1 i').mouseenter(function () {
                 $(this).effect('bounce', {times: 4}, 4500);
+            });
+
+            $('a.search').on('click', function () {
+                $.ajax({
+                    type: "GET",
+                    url: "search/base.jsp",
+                    data: {},
+                    success: function (data) {
+                        $("#contentSearch").html(data).show();
+                    }
+                });
             });
 
         </script>
