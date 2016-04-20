@@ -20,7 +20,7 @@
     ILocationService iLocationService = new LocationServiceImpl();
     ISampleService iSampleService = new SampleServiceImpl();
     List<Object[]> sampleDataByCountry = null;
-    List<Object[]> countryWithManyLocs = new ArrayList<>();
+    List<Object[]> countryWithManyLocs = new ArrayList<Object[]>();
     String countryName = "";
     int locationId[];
     int i = 0;
