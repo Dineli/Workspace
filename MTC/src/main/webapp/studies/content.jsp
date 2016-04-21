@@ -32,6 +32,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- GoogleMaps JS -->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&callback=initialize"></script>
         <script>
             var locationPointers = new Array();
             locationPointers = [
@@ -178,7 +180,7 @@
     $(document).ready(function () {
 
         //initializing google maps
-        initialize();
+//        initialize();
 
         $(".table-custom-main").tablesorter();
 

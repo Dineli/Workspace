@@ -17,15 +17,9 @@
     List<Locations> locationList = iLocationService.getAllLocationData();
 
 %>
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!-- Custom CSS -->
-        <link href="css/other.css" rel="stylesheet">
-        <!-- GoogleMaps JS -->
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     </head>
     <body>
         <div id="wrapper">

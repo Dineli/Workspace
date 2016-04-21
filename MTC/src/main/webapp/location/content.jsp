@@ -33,11 +33,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- GoogleMaps JS -->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&callback=initialize"></script>
         <script>
-            var myCenter = new google.maps.LatLng(<%=locationData.getLongitude()%>,<%= locationData.getLatitude()%>);
             var map;
 
             function initialize() {
+                 var myCenter = new google.maps.LatLng(<%=locationData.getLongitude()%>,<%= locationData.getLatitude()%>);
                 var mapProp = {
                     center: myCenter,
                     zoom: 5,
@@ -135,7 +137,7 @@
 
     $(document).ready(function () {
 
-        initialize();
+//        initialize();
 
         $(".table-custom-main").tablesorter();
 

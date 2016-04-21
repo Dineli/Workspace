@@ -22,9 +22,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!-- GoogleMaps JS -->
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-        <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&callback=initialize"></script>-->
     </head>
     <% if (null != sampleList && sampleList.size() > 0) {%>
     <body>
