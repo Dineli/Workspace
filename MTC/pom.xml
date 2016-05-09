@@ -65,6 +65,12 @@
             <artifactId>logback-core</artifactId>
             <version>1.1.2</version>
         </dependency>
+        <!--below dependency is to obtain a continuous connection without a time out-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>4.3.6.Final</version>
+        </dependency>
 
     </dependencies>
 
