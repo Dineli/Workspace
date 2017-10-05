@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="tbdr"/>
+  <table-filter match-name="drugs"/>
+  <table-filter match-name="data_sources"/>
+  <table-filter match-name="drug_resistance"/>
+  <table-filter match-name="variants"/>
+</hibernate-reverse-engineering>

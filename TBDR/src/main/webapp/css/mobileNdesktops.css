@@ -1,0 +1,116 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 16, 2017, 10:15:07 AM
+    Author     : Dineli
+*/
+
+/* For 22` Desktops */
+@media screen and (max-width: 1680px) and (min-width: 1600px) {
+    .variant-data-content {
+        overflow-y: scroll;
+        max-width: 100%;
+        height: 800px;
+    }
+
+    .search-content{
+        overflow-y: auto;
+        max-width: 100%;
+        height: 600px;
+    }
+}
+
+/* For 20/19` Desktops */
+@media screen and (max-width: 1600px) and (min-width: 1440px){
+
+    .variant-data-content {
+        overflow-y: scroll;
+        max-width: 100%;
+        height: 700px;
+    }
+
+    .search-content{
+        overflow-y: auto;
+        max-width: 100%;
+        height: 500px;
+    }
+    
+    .btnSearch{
+        margin-right: 20%;
+    }
+
+}
+
+/* For 15` Notebooks */
+@media screen and (max-width: 1366px){
+
+    .variant-data-content {
+        overflow-y: scroll;
+        max-width: 100%;
+        height: 600px;
+    }
+
+    .search-content{
+        overflow-y: auto;
+        max-width: 100%;
+        height: 400px;
+    }
+    
+    .btnSearch{
+        margin-right: 17%;
+    }
+}
+
+/* For Mobile */
+@media screen and (max-width: 680px){
+
+    /* TODO - search result should formatted currently it's not visible */
+    
+    .variant-data-content {
+        overflow-y: scroll;
+        max-width: 100%;
+        height: 600px;
+    }
+
+    .login{
+        width: 100%;
+        height: 30%;
+        margin: 0 auto;
+        margin-top: 15%;
+        padding: 18% 5% 3%;
+        border-color: #53354a;
+        border-radius: 5px;
+        border-style: solid;
+    }
+
+    .login-title{
+        text-align: center;
+        font-family: 'Merienda One';
+    }
+
+    .button-box{
+        text-align:right;
+    }
+
+    .welcome-tag{
+        display: none;
+    }
+
+    .multiselect{
+        width: 50% !important;
+    }
+
+    .searchForm .button-box{
+        text-align: left;
+    }
+
+    .btnSearch{
+        width: 50%;
+        background-color: #5c5470;
+        border-color: #5c5470;
+    }
+
+}

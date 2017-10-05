@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tbdr</property>
+        <property name="hibernate.connection.username">tbdr</property>
+        <property name="hibernate.connection.password">tbdr_123_db</property>
+        <property name="show_sql">false</property>
+         <!--connection pool configuration where tomcat crashes when the site in not interacted for more than 8 hrs -->
+        <property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+        <property name="c3p0.min_size">5</property>
+        <property name="c3p0.max_size">20</property>
+        <property name="c3p0.timeout">1800</property>
+        <property name="c3p0.max_statements">50</property>
+        
+        <mapping class="com.nus.tbdr.entity.Drugs"/>
+        <mapping class="com.nus.tbdr.entity.DataSources"/>
+        <mapping class="com.nus.tbdr.entity.Variants"/>
+        <mapping class="com.nus.tbdr.entity.DrugResistance"/>
+        
+    </session-factory>
+</hibernate-configuration>

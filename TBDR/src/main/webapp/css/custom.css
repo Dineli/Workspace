@@ -1,0 +1,316 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 1, 2016, 10:10:01 AM
+    Author     : Dineli
+*/
+
+body {
+    font-family: 'Merienda One';
+    font-size: 16px;
+    background-color: #dbd8e3;
+}
+
+.navbar-inverse{
+    background-color:#53354a;
+    border-color: #53354a;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #d0baa8;
+    text-transform: uppercase;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+    color: #fff;
+    background-color: #53354a;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+    color: #fff;
+    background-color: #53354a;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffacac;
+}
+
+.panel-default > .panel-heading {
+    color: #333;
+    background-color: #dbd8e3;
+    border-color: #ddd;
+}
+
+.panel-default {
+    border-color: #5c5470;
+}
+
+.btn-primary {
+    background-color: #5c5470;
+    border-color: #5c5470;
+}
+
+.btn-primary:hover{
+    background-color: #986ead !important;
+    border-color: #986ead !important;
+}
+
+.btn{
+    text-transform: uppercase; 
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.panel-heading{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c {
+    /*    display: block;
+        font-size: 18px;*/
+    font-weight: bold;
+    line-height: 20px;
+    background-color: #dbd8e3;
+    text-align: center;
+    padding-top: 3%;
+    /*padding-bottom: -6%;*/
+    text-transform: uppercase;
+}
+
+.searchForm select{
+    width: 25%;
+}
+
+.ds-dropdown{
+    width: 25%;
+}
+
+.container{
+    font-family: 'Delius';
+    font-size: 16px;
+    width: 88%;
+}
+
+.content-align-left{
+    text-align: left !important;
+}
+
+.content-align-right{
+    text-align: right !important;
+}
+
+.content-align-center{
+    text-align: center !important;
+}
+
+.show-full-text{
+    white-space: nowrap;
+}
+
+#hor-zebra
+{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    margin: 0 auto;
+    width: 75%;
+    text-align: center;
+    border-collapse: collapse;
+}
+#hor-zebra th
+{
+    /*text-align: center;*/
+    font-size: 12px;
+    padding: 10px 10px;
+    color: #5c5470;
+    background-color: #a6e3e9 !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 0px;
+}
+
+#hor-zebra td
+{
+    padding: 10px;
+    color: #669;
+    font-size: 14px;
+}
+
+#hor-zebra tr:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+
+/*pagination*/
+
+/*displays no of pages in text*/
+.tfootData {
+    float :left;
+    text-align: center;
+    text-decoration: none !important;
+    font-weight: bold;
+    margin-top:10px;
+    border: 1px solid transparent;
+    font-size: small;
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    color: #9e579d;
+}
+
+.paging-nav {
+    float:right;
+    text-align: right;
+    padding-top: 2px;
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 15px;
+}
+.paging-nav a:hover, a:focus{
+    background-color:#ccc;
+}
+
+.paging-nav .selected-page {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #fff 0%, #dcdcdc 100%) repeat scroll 0 0;
+    border: 1px solid #979797;
+    color: #9e579d;
+}
+
+.paging-nav a {
+    border: 1px solid transparent;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: #9e579d;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 2px;
+    min-width: 1.5em;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+/*EOF pagination*/
+
+/*variant-dr inner table*/
+
+.innerTbl {
+    margin: 0 auto;
+}
+
+.innerTbl th {
+    background-color: #459d72 !important;
+    color: black !important;
+}
+
+.innerTbl tbody > tr {
+    background-color: #defbc2 !important;
+    color: black !important;
+}
+
+.innerTbl tbody > tr{
+    display: table-row !important;
+}
+
+/*EOF variant-dr inner table*/
+
+/* search fieldset */
+fieldset.scheduler-border {
+    border: 3px solid #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    border-radius: 10px;
+    /*width:1130px;*/
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:auto;
+    padding:0 10px;
+    border-bottom:none;
+}
+
+.btnSearch{
+    width: 10%;
+    background-color: #5c5470;
+    border-color: #5c5470;
+}
+
+.option-td{
+    float: left; 
+    padding-left: 10%;
+}
+
+td[class*="queryOption"] {
+    display: none;
+}
+
+select[class*="selection"] {
+    width: 150px;
+}
+
+select[class*="andOr"] {
+    width: 150px;
+}
+
+div[class*="generate-selected-option"] {
+    float: right;
+}
+
+table[class*="tblDropDowns"]{
+    width: 200px;
+}
+
+/* EOF search fieldset */
+
+.button-box{
+    padding-top: 2%;
+    margin-left: 30.9%;
+}
+
+.excel-header{
+    outline: none;
+    border : 0;
+    margin-left: 95%;
+}
+
+.login{
+    border-style: solid;
+    width: 30%;
+    height: 30%;
+    margin: 0 auto;
+    margin-top: 15%;
+    padding: 5% 1% 1%;
+    border-color: #53354a;
+    border-radius: 5px;
+}
+
+.login-title{
+    text-align: center;
+    margin-top: -15%;
+    font-family: 'Merienda One';
+}
+
+.welcome-tag{
+    float: right !important;
+    margin-right: -115%;
+    margin-top: 2%;
+    color: wheat;
+    text-transform: uppercase;
+    font-size: 13.5px;
+}
+
+@font-face {
+    font-family: 'Merienda One';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Merienda One'), local('MeriendaOne-Regular'), url(http://fonts.gstatic.com/s/meriendaone/v7/bCA-uDdUx6nTO8SjzCLXvegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+    font-family: 'Delius';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Delius-Regular'), url(http://fonts.gstatic.com/s/delius/v6/ARghnDOAKVWf_iK5QVd4Yw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
