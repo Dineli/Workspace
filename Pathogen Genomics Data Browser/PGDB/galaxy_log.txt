@@ -1,0 +1,513 @@
+INFO:root:Starting workflow analysis on 2017-06-23 18:17:16.324000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-28 17:13:13.328000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:set params_dict to {u'toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.12': {u'rg': {u'rg_selector': u'set', u'read_group_sm_conditional': {u'do_auto_name': u'True', u'__current_case__': 0}, u'CN': u'', u'PU': u'', u'read_group_lb_conditional': {u'do_auto_name': u'False', u'LB': u'CTD0113'}, u'KS': u'', u'PL': u'ILLUMINA'}}, u'toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/0.0.3': {u'advanced_options': {u'max_reads_per_bam': u'1000', u'coefficient_for_downgrading': '100', u'minimum_mapping_quality': '10', u'minimum_base_quality': u'20'}}} 
+INFO:root:Submitting workflow + edited params with invocation id 9a4fac480ff0f658
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file C:\Users\EPHAADK\Desktop\PythonTest\output_123.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Starting workflow analysis on 2017-06-29 11:00:33.724000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 11:11:30.980000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 11:25:20.451000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 11:29:39.998000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 11:38:25.644000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 11:46:43.412000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 11:50:16.577000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 11:51:37.049000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 11:59:07.208000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 14:50:27.523000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 14:51:55.199000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 15:03:51.216000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 15:05:26.125000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 16:33:11.376000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 16:34:09.518000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 16:36:11.760000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 16:57:06.644000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 16:57:37.879000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 16:58:25.699000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 16:59:44.796000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 17:01:14.236000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 17:09:27.800000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 17:10:06.796000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 17:12:55.115000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 17:13:34.962000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 17:15:08.780000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 17:15:43.444000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 17:16:24.510000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Starting workflow analysis on 2017-06-29 17:23:23.383000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-06-29 17:37:31.560000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id ea9d0c3dde7ea9d0
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170629_173616.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Starting workflow analysis on 2017-06-30 14:27:40.646000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:set params_dict to {u'toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.12': {u'rg': {u'rg_selector': u'set', u'read_group_sm_conditional': {u'do_auto_name': u'True', u'__current_case__': 0}, u'CN': u'', u'PU': u'', u'read_group_lb_conditional': {u'do_auto_name': u'False', u'LB': u'CTD0113'}, u'KS': u'', u'PL': u'ILLUMINA'}}, u'toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/0.0.3': {u'advanced_options': {u'max_reads_per_bam': u'1000', u'coefficient_for_downgrading': '40', u'minimum_mapping_quality': u'6', u'minimum_base_quality': u'20'}}} 
+INFO:root:Submitting workflow + edited params with invocation id 3eced19d21f26814
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:Starting workflow analysis on 2017-06-30 14:40:59.794000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id e6c168322ad84d61
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:status:1
+INFO:root:Created a tar zipped file src\main\webapp\pipelineResults\mTB_pipeline_outputs_20170630_142640.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file src\main\webapp\pipelineResults\mTB_pipeline_outputs_20170630_143921.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Starting workflow analysis on 2017-06-30 16:35:11.240000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id e7e34aa379038433
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:Starting workflow analysis on 2017-06-30 16:53:13.586000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id be3627d38983066c
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:Starting workflow analysis on 2017-06-30 16:54:39.132000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:set params_dict to {u'toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.12': {u'rg': {u'rg_selector': u'set', u'read_group_sm_conditional': {u'do_auto_name': u'True', u'__current_case__': 0}, u'CN': u'', u'PU': u'', u'read_group_lb_conditional': {u'do_auto_name': u'False', u'LB': u'CTD0113'}, u'KS': u'', u'PL': u'ILLUMINA'}}, u'toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/0.0.3': {u'advanced_options': {u'max_reads_per_bam': u'1000', u'coefficient_for_downgrading': u'50', u'minimum_mapping_quality': '3', u'minimum_base_quality': u'20'}}} 
+INFO:root:Submitting workflow + edited params with invocation id 077d52c87ee6c794
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:status:3
+INFO:root:Created a tar zipped file src\main\webapp\pipelineResults\mTB_pipeline_outputs_20170630_165222.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Created a tar zipped file src\main\webapp\pipelineResults\mTB_pipeline_outputs_20170630_165341.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Starting workflow analysis on 2017-07-03 10:51:04.570000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id 8f8182cf16a52f5c
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_104907.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Starting workflow analysis on 2017-07-03 11:55:18.023000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-07-03 11:55:41.246000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:set params_dict to {u'toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.12': {u'rg': {u'rg_selector': u'set', u'read_group_sm_conditional': {u'do_auto_name': u'True', u'__current_case__': 0}, u'CN': u'', u'PU': u'', u'read_group_lb_conditional': {u'do_auto_name': u'False', u'LB': u'CTD0113'}, u'KS': u'', u'PL': u'ILLUMINA'}}, u'toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/0.0.3': {u'advanced_options': {u'max_reads_per_bam': u'1000', u'coefficient_for_downgrading': u'50', u'minimum_mapping_quality': '3', u'minimum_base_quality': u'20'}}} 
+INFO:root:Submitting workflow + edited params with invocation id eb559f9eb1e01015
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:Created dataset collection in history
+INFO:root:set params_dict to {u'toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.12': {u'rg': {u'rg_selector': u'set', u'read_group_sm_conditional': {u'do_auto_name': u'True', u'__current_case__': 0}, u'CN': u'', u'PU': u'', u'read_group_lb_conditional': {u'do_auto_name': u'False', u'LB': u'CTD0113'}, u'KS': u'', u'PL': u'ILLUMINA'}}, u'toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/0.0.3': {u'advanced_options': {u'max_reads_per_bam': u'1000', u'coefficient_for_downgrading': '20', u'minimum_mapping_quality': u'6', u'minimum_base_quality': u'20'}}} 
+INFO:root:Submitting workflow + edited params with invocation id b85c0a3d7702e156
+INFO:root:status:0
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_115341.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_115320.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Starting workflow analysis on 2017-07-03 12:22:47.070000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-07-03 12:23:11.798000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:set params_dict to {u'toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.12': {u'rg': {u'rg_selector': u'set', u'read_group_sm_conditional': {u'do_auto_name': u'True', u'__current_case__': 0}, u'CN': u'', u'PU': u'', u'read_group_lb_conditional': {u'do_auto_name': u'False', u'LB': u'CTD0113'}, u'KS': u'', u'PL': u'ILLUMINA'}}, u'toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/0.0.3': {u'advanced_options': {u'max_reads_per_bam': u'1000', u'coefficient_for_downgrading': '30', u'minimum_mapping_quality': u'6', u'minimum_base_quality': u'20'}}} 
+INFO:root:Submitting workflow + edited params with invocation id 58b18d8c5167c134
+INFO:root:status:0
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_122106.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Created dataset collection in history
+INFO:root:set params_dict to {u'toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.12': {u'rg': {u'rg_selector': u'set', u'read_group_sm_conditional': {u'do_auto_name': u'True', u'__current_case__': 0}, u'CN': u'', u'PU': u'', u'read_group_lb_conditional': {u'do_auto_name': u'False', u'LB': u'CTD0113'}, u'KS': u'', u'PL': u'ILLUMINA'}}, u'toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/0.0.3': {u'advanced_options': {u'max_reads_per_bam': u'1000', u'coefficient_for_downgrading': '40', u'minimum_mapping_quality': u'6', u'minimum_base_quality': u'20'}}} 
+INFO:root:Submitting workflow + edited params with invocation id 5547e12ecbb923ef
+INFO:root:status:0
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_122122.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Starting workflow analysis on 2017-07-03 12:29:30.717000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-07-03 12:29:52.847000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:set params_dict to {u'toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.12': {u'rg': {u'rg_selector': u'set', u'read_group_sm_conditional': {u'do_auto_name': u'True', u'__current_case__': 0}, u'CN': u'', u'PU': u'', u'read_group_lb_conditional': {u'do_auto_name': u'False', u'LB': u'CTD0113'}, u'KS': u'', u'PL': u'ILLUMINA'}}, u'toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/0.0.3': {u'advanced_options': {u'max_reads_per_bam': u'1000', u'coefficient_for_downgrading': '20', u'minimum_mapping_quality': '4', u'minimum_base_quality': u'20'}}} 
+INFO:root:Submitting workflow + edited params with invocation id cf271ce4d10fc994
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id 3c8ad20e74408370
+INFO:root:status:0
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_122806.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_122838.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Starting workflow analysis on 2017-07-03 13:00:01.612000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-07-03 13:00:25.908000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id 8a3c491219890a73
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id 8f4977fbe1479f20
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_125814.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_125753.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Starting workflow analysis on 2017-07-03 14:21:01.437000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id 63ed2554cce65b96
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:Starting workflow analysis on 2017-07-03 14:22:24.193000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id aae6bb3dce9f53a8
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_142041.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:Starting workflow analysis on 2017-07-03 14:38:01.625000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-07-03 14:38:17.578000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id 0260cc12d51addfd
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:Starting workflow analysis on 2017-07-03 14:39:37.483000
+INFO:root:Created dataset collection in history
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Submitting workflow + default params with invocation id 3a417827d486249b
+INFO:root:status:0
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_143807.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:status:3
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id 165d9b3b66a02303
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_142125.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_143750.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_143822.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Starting workflow analysis on 2017-07-03 17:34:24.469000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id 776d69e324a3d7a6
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:Starting workflow analysis on 2017-07-03 17:35:40.954000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-07-03 17:35:53.924000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Starting workflow analysis on 2017-07-03 17:36:17.536000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id 5f16ac0b794dfd85
+INFO:root:status:0
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_173413.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_173336.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Created dataset collection in history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id 7757215ab5b3f967
+INFO:root:status:0
+INFO:root:Submitting workflow + default params with invocation id e6b02a4bcecc6064
+INFO:root:status:0
+INFO:root:status:2
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_173445.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170703_173351.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Starting workflow analysis on 2017-07-04 18:58:52.280000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id d847563f7abeb436
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170704_185709.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Starting workflow analysis on 2017-07-05 12:20:00.815000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id df62cd791c7d7a7a
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:Starting workflow analysis on 2017-07-05 12:23:04.553000
+INFO:root:Created a new history with name mTB_pipeline from CIDR-PC
+INFO:root:Uploading fastq files to history
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170705_121921.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+
+INFO:root:Created dataset collection in history
+INFO:root:Submitting workflow + default params with invocation id 7f7af0c162717e24
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file A:\Workspace\Pathogen Genomics Data Browser\UserLogs\40052\mTB_pipeline_outputs_20170705_122127.tgz
+INFO:root:DONE!!
+INFO:root:!==================================================****==================================================!
+

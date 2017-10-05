@@ -1,0 +1,14 @@
+{
+	"toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/0.0.3":{
+		"advanced_options": {"max_reads_per_bam":"1000",
+		 "minimum_mapping_quality":"6", "minimum_base_quality":"20" , "coefficient_for_downgrading":"50" }
+	},
+
+	"toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.12": {
+		"rg": {"rg_selector": "set", "KS": "", "read_group_sm_conditional": {"do_auto_name": "True", "__current_case__": 0}, 
+				"CN": "", "PU": "", "read_group_lb_conditional": {"do_auto_name": "False", "LB": "CTD0113"}, 
+				 "PL": "ILLUMINA"}
+	}
+	
+
+}

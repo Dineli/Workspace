@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.pgdb_PGDB_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.nus.pgdb.entity.Projects</class>
+    <class>com.nus.pgdb.entity.Organisms</class>
+    <class>com.nus.pgdb.entity.Samples</class>
+    <class>com.nus.pgdb.entity.SequenceFiles</class>
+    <class>com.nus.pgdb.entity.SamplesSequenceFiles</class>
+    <class>com.nus.pgdb.entity.ProjectSamples</class>
+    <class>com.nus.pgdb.entity.PipelineJobs</class>
+    <class>com.nus.pgdb.entity.Users</class>
+    <class>com.nus.pgdb.entity.JobsCart</class>
+    <class>com.nus.pgdb.entity.PipelineJobsHistory</class>
+    <class>com.nus.pgdb.entity.UserProjects</class>
+    <class>com.nus.pgdb.entity.SharedUserProjects</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pgdb?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="pgdb_0517"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="pgdb"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+    </properties>
+  </persistence-unit>
+</persistence>

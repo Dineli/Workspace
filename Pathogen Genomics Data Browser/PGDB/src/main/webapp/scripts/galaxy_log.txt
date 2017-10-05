@@ -1,0 +1,19 @@
+INFO:root:Starting workflow analysis on 2017-06-23 16:21:16.534000
+INFO:root:Created a new history with name new_mTB_pipeline from DEPT-BQLB0J2
+INFO:root:Uploading fastq files to history
+INFO:root:Created dataset collection in history
+INFO:root:set params_dict to {u'toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.12': {u'rg': {u'rg_selector': u'set', u'read_group_sm_conditional': {u'do_auto_name': u'True', u'__current_case__': 0}, u'CN': u'', u'PU': u'', u'read_group_lb_conditional': {u'do_auto_name': u'False', u'LB': 'DK123'}, u'KS': u'', u'PL': u'ILLUMINA'}}, u'toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/0.0.3': {u'advanced_options': {u'max_reads_per_bam': '2500', u'coefficient_for_downgrading': '45', u'minimum_mapping_quality': '4', u'minimum_base_quality': '10'}}} 
+INFO:root:Submitting workflow + edited params with invocation id c3ed71a8eabf1eae
+INFO:root:status:0
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:1
+INFO:root:status:2
+INFO:root:Downloading datasets marked as available in workflow steps
+INFO:root:status:3
+INFO:root:Created a tar zipped file C:\Users\EPHAART\Documents\Project\TB\real_data\output6.tgz
+INFO:root:DONE!!
+INFO:root:!==============================****==============================!
+
